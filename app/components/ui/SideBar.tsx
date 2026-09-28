@@ -10,14 +10,15 @@ export default function SideBar({
     setSidebarOpen,
     sidebarItems,
     activeSection,
-    setActiveSection
+    setActiveSection,
+    sideBarRight
 } : Props) {
     const { push } = useRouter();
     return (
-        <aside
+        <div
           className={`${
             sidebarOpen ? "translate-x-0" : "-translate-x-full"
-          } md:translate-x-0 fixed md:static inset-y-0 left-0 z-50 w-64 bg-gray-800/90 backdrop-blur-xl border-r border-gray-600/50 transition-transform duration-300 ease-in-out`}
+          } md:translate-x-0 fixed md:static inset-y-0 ${sideBarRight ? 'right-0' : 'left-0'} z-50 w-64 bg-gray-800 ${sideBarRight ? 'border-l' : 'border-r'} border-gray-600 transition-transform duration-300 ease-in-out`}
         >
           <div className="p-6 space-y-2">
             {sidebarItems.map((item) => (
@@ -50,7 +51,7 @@ export default function SideBar({
               </button>
             ))}
           </div>
-        </aside>
+        </div>
     )
 }
 
@@ -59,5 +60,6 @@ type Props = {
     sidebarItems: SideBarItem[],
     setSidebarOpen: (value: SetStateAction<boolean>) => void,
     activeSection?: string,
-    setActiveSection?: (value: SetStateAction<string>) => void
+    setActiveSection?: (value: SetStateAction<string>) => void,
+    sideBarRight?: boolean
 }
