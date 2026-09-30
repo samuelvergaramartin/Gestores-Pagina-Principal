@@ -14,7 +14,7 @@ export default function CreateUserPage() {
         <MainLayout 
             navbar={
                 <Navbar 
-                    returnLink="/config"
+                    returnLink="/config/users"
                     description="Creación de usuario"
                 />
             }
