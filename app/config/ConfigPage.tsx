@@ -12,6 +12,7 @@ export default function ConfigPage() {
         {
             id: "usuarios",
             label: "Usuarios",
+            href: "/config/users/create"
         },
         {
             id: "roles",
