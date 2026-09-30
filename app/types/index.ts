@@ -11,3 +11,15 @@ export type SideBarItem = {
     primary?: boolean;
     href?: string
 }
+
+/**
+ * Representa a un usuario
+ */
+
+export type User = {
+    id: number,
+    email: string,
+    fullname: string,
+    password: string,
+    isAdminIT: boolean
+}
