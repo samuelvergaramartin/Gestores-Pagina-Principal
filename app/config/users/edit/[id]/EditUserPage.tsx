@@ -6,6 +6,7 @@ import MainLayout from "@/app/components/layout/MainLayout";
 import Navbar from "@/app/components/ui/NavBar";
 import SideBar from "@/app/components/ui/SideBar";
 import UserSection from "@/app/config/users/edit/[id]/sections/UserSection";
+import PermissionsSection from "@/app/config/users/edit/[id]/sections/PermissionsSection";
 
 export default function EditUserPage({ id } : Props) {
     const [user, setUser] = useState<User | null>(null);
@@ -58,6 +59,9 @@ export default function EditUserPage({ id } : Props) {
                 <div className="flex w-full justify-center">
                     {activeSection === "usuario" && (
                         <UserSection user={user} />
+                    )}
+                    {activeSection === "roles" && (
+                        <PermissionsSection user={user} />
                     )}
                 </div>
             </div>
