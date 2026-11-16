@@ -7,6 +7,7 @@ import Navbar from "@/app/components/ui/NavBar";
 import SideBar from "@/app/components/ui/SideBar";
 import UserSection from "@/app/config/users/edit/[id]/sections/UserSection";
 import PermissionsSection from "@/app/config/users/edit/[id]/sections/PermissionsSection";
+import RolesSection from "@/app/config/users/edit/[id]/sections/RolesSection";
 
 export default function EditUserPage({ id } : Props) {
     const [user, setUser] = useState<User | null>(null);
@@ -61,6 +62,9 @@ export default function EditUserPage({ id } : Props) {
                         <UserSection user={user} />
                     )}
                     {activeSection === "roles" && (
+                        <RolesSection user={user} />
+                    )}
+                    {activeSection === "permisos" && (
                         <PermissionsSection user={user} />
                     )}
                 </div>
