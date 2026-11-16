@@ -26,10 +26,10 @@ export default function PermissionsSection({ user } : Params) {
             <CardHeader>
                 <CardTitle className="flex items-center text-red-300">
                     <ListCheck className="h-6 w-6 mr-3 text-red-400" />
-                    Roles
+                    Permisos
                 </CardTitle>
                 <CardDescription className="text-gray-300">
-                    Edite los roles del usuario
+                    Edite los permisos del usuario
                 </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
